@@ -1,0 +1,29 @@
+# Project: Binaryclock
+# Makefile created by Dev-C++ 4.9.8.9
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = main.o $(RES)
+LINKOBJ  = main.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib" -lmingw32 -lSDL -lSDLmain ../../../../../Dev-Cpp/lib/libSDL.a ../../../../../Dev-Cpp/lib/libSDLmain.a -mwindows 
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/include/c++"  -I"C:/Dev-Cpp/include/c++/mingw32"  -I"C:/Dev-Cpp/include/c++/backward"  -I"C:/Dev-Cpp/include" 
+BIN  = Binaryclock.exe
+CXXFLAGS = $(CXXINCS)  -mwindows
+CFLAGS = $(INCS)  -mwindows
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before Binaryclock.exe all-after
+
+
+clean: clean-custom
+	rm -f $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "Binaryclock.exe" $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
