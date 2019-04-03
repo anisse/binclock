@@ -93,7 +93,7 @@ void PutFigure(int figure, int nbbits, int pos)
 
 			figure -= test;
 
-			PutLed(pos, 4 - nbbits, LED_ON) < 0;
+			PutLed(pos, 4 - nbbits, LED_ON);
 		} else
 			PutLed(pos, 4 - nbbits, LED_OFF);
 
@@ -129,7 +129,7 @@ void InitScreen(void)
 	SDL_WM_SetCaption("Binary Clock", NULL);
 }
 
-int main(int argc, char *argv[])
+int main()
 {
 	time_t t;
 	struct tm *hour = NULL;

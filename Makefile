@@ -1,4 +1,4 @@
-CFLAGS=$(shell pkg-config --cflags --libs sdl)
+CFLAGS=$(shell pkg-config --cflags --libs sdl) -Wall -Wextra
 OBJ:=binclock
 
 all: $(OBJ)
