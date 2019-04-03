@@ -88,9 +88,7 @@ void PutFigure(int figure, int nbbits, int pos)
 		test *= 2;
 
 	while (nbbits) {
-		//                      printf("Fig=%d test=%d\n", figure, test);
 		if ((figure - test) >= 0) {
-
 			figure -= test;
 
 			PutLed(pos, 4 - nbbits, LED_ON);
@@ -160,7 +158,6 @@ int main()
 							     SDL_SWSURFACE |
 							     SDL_NOFRAME |
 							     SDL_DOUBLEBUF);
-					//SDL_SetAlpha(screen, SDL_SRCALPHA|SDL_RLEACCEL, 128);
 					SDL_FillRect(screen, NULL,
 						     SDL_MapRGB(screen->format,
 								255, 255, 255));
@@ -172,7 +169,6 @@ int main()
 							     SDL_ANYFORMAT |
 							     SDL_SWSURFACE |
 							     SDL_DOUBLEBUF);
-					//SDL_SetAlpha(screen, SDL_SRCALPHA|SDL_RLEACCEL, 128);
 					SDL_FillRect(screen, NULL,
 						     SDL_MapRGB(screen->format,
 								255, 255, 255));
@@ -190,10 +186,6 @@ int main()
 
 		display(ptime);
 		SDL_Flip(screen);
-//  printf("%d%d  %d%d   %d%d\n\n",(unsigned int)ptime->h_d, (unsigned int)ptime->h_u, (unsigned int)ptime->m_d, (unsigned int)ptime->m_u, (unsigned int)ptime->s_d, (unsigned char)ptime->s_u);
-		/*   system("cls");
-		   printf("%d  %d   %d\n\n",hour->tm_hour ,hour->tm_min, hour->tm_sec );
-		   fflush(stdout); */
 		free(ptime);
 		SDL_Delay(499);
 	}
