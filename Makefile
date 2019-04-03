@@ -1,3 +1,7 @@
 CFLAGS=$(shell pkg-config --cflags --libs sdl)
+OBJ:=binclock
 
-all: binclock
+all: $(OBJ)
+
+clean:
+	rm -f $(OBJ)
